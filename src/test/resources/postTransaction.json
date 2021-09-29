@@ -1,0 +1,116 @@
+[
+    {
+        "amount": 100,
+        "custId": 1,
+        "date": "14-08-2021",
+        "name": "transaction 1"
+    },
+    {
+        "amount": 1186,
+        "custId": 1,
+        "date": "10-07-2021",
+        "name": "transaction 2"
+    },
+    {
+        "amount": 160050,
+        "custId": 1,
+        "date": "10-12-2020",
+        "name": "transaction 3"
+    },
+    {
+        "custId": 1,
+        "name": "Acme",
+        "amount": 120,
+        "date": "05-01-2019"
+    },
+    {
+        "custId": 1,
+        "name": "Acme",
+        "amount": 75,
+        "date": "21-05-2019"
+    },
+    {
+        "custId": 1,
+        "name": "Acme",
+        "amount": 94,
+        "date": "21-05-2019"
+    },
+    {
+        "custId": 1,
+        "name": "Acme",
+        "amount": 10,
+        "date": "06-01-2019"
+    },
+    {
+        "custId": 1,
+        "name": "Acme",
+        "amount": 75,
+        "date": "04-08-2021"
+    },
+    {
+        "custId": 1,
+        "name": "Acme",
+        "amount": 200,
+        "date": "07-01-2019"
+    },
+    {
+        "custId": 1,
+        "name": "Acme",
+        "amount": 1,
+        "date": "07-04-2019"
+    },
+    {
+        "custId": 1,
+        "name": "Acme",
+        "amount": 80,
+        "date": "07-03-2019"
+    },
+    {
+        "custId": 1,
+        "name": "Acme",
+        "amount": 224,
+        "date": "07-09-2021"
+    },
+    {
+        "custId": 2,
+        "name": "Century",
+        "amount": 125,
+        "date": "05-01-2019"
+    },
+    {
+        "custId": 2,
+        "name": "Century",
+        "amount": 75,
+        "date": "21-05-2019"
+    },
+    {
+        "custId": 2,
+        "name": "Century",
+        "amount": 10,
+        "date": "06-01-2019"
+    },
+    {
+        "custId": 2,
+        "name": "Century",
+        "amount": 75,
+        "date": "04-08-2021"
+    },
+    {
+        "custId": 2,
+        "name": "Century",
+        "amount": 200,
+        "date": "07-01-2019"
+    },
+    {
+        "custId": 2,
+        "name": "Century",
+        "amount": 224,
+        "date": "07-09-2021"
+    },
+    {
+        "custId": 3,
+        "name": "Sallys Startup",
+        "amount": 120,
+        "date": "04-08-2021"
+    }
+]
