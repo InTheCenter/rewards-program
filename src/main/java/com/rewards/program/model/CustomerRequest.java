@@ -3,7 +3,10 @@ package com.rewards.program.model;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class CustomerRequest {
+	@JsonIgnore
     private Long id;
     @NotEmpty(message = "Name attribute must not be empty")
     @NotNull(message = "Name attribute must not be null")

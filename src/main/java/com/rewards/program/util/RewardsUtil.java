@@ -18,13 +18,14 @@ public final class RewardsUtil {
         log.info("[calculatePoints] start - amount: {}", amount);
         Long points = 0L;
         Long over100 = amount - 100;
+        Long over50 = amount - 50;
 
         if (over100 > 0) {
             points += (over100 * 2);
-          }    
-          if (amount > 50) {
-            points += 50;      
-          }
+            points += 50;  
+        }else if(over50 > 0){
+        	points += over50;     
+        }
         log.info("[calculatePoints] end - points: {}", points);
         return points;
     }

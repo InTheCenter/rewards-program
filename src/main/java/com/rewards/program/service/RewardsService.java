@@ -194,6 +194,18 @@ public class RewardsService{
             throw new BusinessException(ErrorEnumUtil.CUSTOMER_NOT_FOUND, id, HttpStatus.NOT_FOUND);
         }
     }
+    
+    public String deleteAllCustomers(){
+        log.info("[deleteAllCustomers]");
+        try {
+            customerRepository.deleteAll();
+            log.debug("[deleteAllCustomers] customers were deleted");
+        }catch(Exception e){
+            log.error("[deleteAllCustomers] customer were not found");
+            throw new BusinessException(ErrorEnumUtil.CUSTOMER_NOT_FOUND, HttpStatus.NOT_FOUND);
+        }
+        return "Customers were deleted";
+    }
 
     public Customer updateCustomer(String id, String name){
         log.info("[updateCustomer] id: {}", id);
@@ -221,6 +233,18 @@ public class RewardsService{
             log.error("[deleteTransaction] transaction not found, id: {}", id);
             throw new BusinessException(ErrorEnumUtil.TRANSACTION_NOT_FOUND, id, HttpStatus.NOT_FOUND);
         }
+    }
+    
+    public String deleteAllTransactions(){
+        log.info("[deleteAllTransactions]");
+        try {
+            transactionRepository.deleteAll();
+            log.debug("[deleteAllTransactions] transactions were deleted");
+        }catch(Exception e){
+            log.error("[deleteAllTransactions] transactions were not found");
+            throw new BusinessException(ErrorEnumUtil.CUSTOMER_NOT_FOUND, HttpStatus.NOT_FOUND);
+        }
+        return "Transactions were deleted";
     }
 
     public Transaction updateTransaction(String id, String name, String date, String amount){

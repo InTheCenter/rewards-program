@@ -53,6 +53,44 @@ public class RewardsControllerTest {
 				.contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
 				.andExpect(status().isCreated());
 	}
+	
+	@Test
+	public void deleteCustomerOk() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.delete("/customer/{id}", "1")
+				.contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+				.andExpect(status().isOk());
+	}
+	
+	@Test
+	public void deleteAllCustomersOk() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.delete("/customer")
+				.contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+				.andExpect(status().isOk());
+	}
+	
+	@Test
+	public void updateCustomerOk() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.put("/customer/{id}", "1")
+				.param("name", "Transaction updated")
+				.contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+				.andExpect(status().isOk());
+	}
+	
+	@Test
+	public void updateCustomerBadRequestId() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.put("/customer/{id}", " ")
+				.param("name", "Transaction updated")
+				.contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+				.andExpect(status().isBadRequest());
+	}
+	
+	@Test
+	public void updateCustomerBadRequestName() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.put("/customer/{id}", "1")
+				.param("name", "")
+				.contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+				.andExpect(status().isBadRequest());
+	}
 
 
 	@Test
@@ -93,9 +131,42 @@ public class RewardsControllerTest {
 				.contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
 				.andExpect(status().isBadRequest());
 	}
+	
+	@Test
+	public void deleteTransactionOk() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.delete("/transaction/{id}", "1")
+				.contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+				.andExpect(status().isOk());
+	}
+	
+	@Test
+	public void deleteAllTransactionsOk() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.delete("/transaction")
+				.contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+				.andExpect(status().isOk());
+	}
+	
+	@Test
+	public void updateTransactionOk() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.put("/transaction/{id}", "1")
+				.param("name", "Transaction updated")
+				.param("date", "15-10-2021")
+				.param("amount", "2500")
+				.contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+				.andExpect(status().isOk());
+	}
+	
+	@Test
+	public void updateTransactionBadRequest() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.put("/transaction/{id}", "1")
+				.param("name", "Transaction updated")
+				.param("amount", "2500")
+				.contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+				.andExpect(status().isBadRequest());
+	}
 
 	@Test
-	public void getRewardsPerMomth() throws Exception {
+	public void getRewardsPerMonth() throws Exception {
 		mvc.perform(MockMvcRequestBuilders.get("/reward")
 				.param("month", "true")
 				.contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
